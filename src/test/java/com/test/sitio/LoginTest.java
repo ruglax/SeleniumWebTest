@@ -38,14 +38,16 @@ public class LoginTest {
         btnCerrar.click();
 
         WebElement toolbar = driver.findElement(By.className("x-toolbar-left-row"));
-        List<WebElement> menuCategory = driver.findElements(By.className("x-toolbar-cell"));
+        List<WebElement> menuCategory = toolbar.findElements(By.className("x-toolbar-cell"));
         menuCategory.get(0).click();
 
 
         WebElement menu = driver.findElement(By.id("x-menu-el-BotonSupModulo_CrearCFDI3_30"));
         menu.click();
 
-        driver.findElement(By.id("RFC3_3")).sendKeys("AAA010101AAA");
+        WebElement txtRfc = driver.findElement(By.id("RFC3_3"));
+        txtRfc.sendKeys("AAA010101AAA");
+        txtRfc.sendKeys("\t");
     }
 
 }
