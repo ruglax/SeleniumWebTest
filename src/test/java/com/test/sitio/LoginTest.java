@@ -17,7 +17,7 @@ public class LoginTest {
     @Test
     public void testDownloadLinkExists() throws MalformedURLException {
 
-        System.setProperty("webdriver.chrome.driver", "/Users/raulsr/Downloads/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./libs/chromedriver");
 
         ChromeDriver driver = new ChromeDriver();
         driver.get("https://beta.cfdi.com.mx/login/");

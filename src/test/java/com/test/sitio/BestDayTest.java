@@ -12,7 +12,7 @@ public class BestDayTest {
     @Test
     public void useSelect() throws MalformedURLException {
 
-        System.setProperty("webdriver.chrome.driver", "/Users/raulsr/Downloads/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./libs/chromedriver");
 
         ChromeDriver driver = new ChromeDriver();
         driver.get("https://www.bestday.com.mx/");
