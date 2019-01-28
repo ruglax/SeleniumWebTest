@@ -41,14 +41,8 @@ public class CreditoTest {
         WebElement reportesMenu = menus.get(reportesIndex);
 
         //Seleccionamos el select de los reportes
-        WebElement selectWebElement = reportesMenu.findElement(By.id("s5"));
-        selectWebElement.click();
-
-        //Seleccioamos el tercer reporte de la lista desplegable
-        List<WebElement> options = selectWebElement.findElements(By.tagName("option"));
-        int opcionIndex = 3;
-        options.get(opcionIndex).click();
-
+        Select select = new Select(reportesMenu.findElement(By.id("s5")));
+        select.selectByVisibleText("Download Reports");
         //Se debe generar el reporta aquí :)
     }
 }
