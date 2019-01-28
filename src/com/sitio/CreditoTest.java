@@ -18,11 +18,15 @@ public class CreditoTest {
         System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
 
         ChromeDriver driver = new ChromeDriver();
-        driver.get("http://localhost/thai/eCredisystem_archivos/jsMenuCO.htm");
+        driver.get("http://localhost/thai/eCredisystem.htm");
+
+        WebDriverWait waitMenu = new WebDriverWait(driver, 240);
+        WebElement frameMenu = waitMenu.until(ExpectedConditions.visibilityOf(driver.findElement(By.name("frMenu"))));
+
+        driver.switchTo().frame(frameMenu);
 
         WebDriverWait wait = new WebDriverWait(driver, 240);
         WebElement form = wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("frmjsMenuCO"))));
-        //WebElement form = driver.findElement(By.id("frmjsMenuCO"));
 
         WebElement menuContainer = form.findElement(By.className("esTableTrMenu"));
         List<WebElement> menus = menuContainer.findElements(By.className("esTableTdMenu"));
