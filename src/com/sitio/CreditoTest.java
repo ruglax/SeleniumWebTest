@@ -48,5 +48,7 @@ public class CreditoTest {
         List<WebElement> options = selectWebElement.findElements(By.tagName("option"));
         int opcionIndex = 3;
         options.get(opcionIndex).click();
+
+        //Se debe generar el reporta aquí :)
     }
 }
